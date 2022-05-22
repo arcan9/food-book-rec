@@ -1,0 +1,48 @@
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #fff;
+  background-image: linear-gradient(-45deg, #ffc796 0%, #ff6b95 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mood-container {
+  display: flex;
+  max-width: 900px;
+  flex-direction: column;
+  text-align: center;
+}
+
+.first-row-mood {
+  display: flex;
+  justify-content: center;
+}
+
+.second-row-mood {
+  display: flex;
+  justify-content: center;
+}
+
+.mood {
+  background-color: rgb(254, 247, 235);
+  margin: 30px 20px;
+  border: 1px black solid;
+  border-radius: 10px;
+  padding: 20px 20px;
+  transition: all 200ms ease-in-out;
+}
+
+.mood:hover {
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.mood:active {
+  transform: translate(0, 0.5rem);
+}
