@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
 html {
   box-sizing: border-box;
 }
@@ -7,9 +9,11 @@ body {
   min-height: 100vh;
   background-color: #fff;
   background-image: linear-gradient(-45deg, #ffc796 0%, #ff6b95 100%);
+  font-family: "Roboto", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .mood-container {
@@ -45,4 +49,33 @@ body {
 
 .mood:active {
   transform: translate(0, 0.5rem);
+}
+
+.volumeContainer {
+  display: flex;
+  max-width: 400px;
+  align-items: center;
+  text-align: center;
+}
+
+.bookTitle {
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+#footer {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  margin: 30px auto;
+}
+
+@media screen and (max-width: 1000px) {
+  .mood-container,
+  .volumeContainer,
+  #footer {
+    margin: auto 10px;
+  }
 }
