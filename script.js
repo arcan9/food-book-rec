@@ -1,8 +1,8 @@
 // Create an event listener for when a user clicks a certain section
 // it makes a call to a function that...
 
-// Takes an API with a certain parameter
-// For example, "insightful," and axios fetches this data.
+// Takes Google Books API with a certain parameter
+// For example, "life+happiness," and axios fetches this data.
 // Then it calls a...
 
 // Function that takes that result and pulls a random book title
@@ -18,7 +18,8 @@ function clickMood() {
 
 function myFunc(response) {
   console.log(response);
-  console.log(response.data.items[0].volumeInfo.authors);
+  let randomArray = Math.floor(Math.random() * response.data.items.length);
+  console.log(response.data.items[randomArray].volumeInfo.title);
 }
 
 let myMood = document.querySelector(".mood");
