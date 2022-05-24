@@ -11,19 +11,28 @@
 
 function clickMood() {
   let apiKey = "AIzaSyAKH5VZTVN3qjnDH0PKgJU6TcPgOX-uNYg"; // hide this key later
-  let apiUrl = `https://www.googleapis.com/books/v1/volumes?q=life+happiness+positive+insubject:self-help&filter=ebooks&key=${apiKey}`;
+  let apiUrl = `https://www.googleapis.com/books/v1/volumes?q=street+food+"Thailand"+insubject:food&maxResults=40&key=${apiKey}`;
 
   axios.get(apiUrl).then(recommendTitle);
 }
 
 function recommendTitle(response) {
-  console.log(response);
+  // console.log(response);
   let randomArray = Math.floor(Math.random() * response.data.items.length);
-  let bookRec = response.data.items[randomArray].volumeInfo.title;
-  let bookTitleDiv = document.querySelector(".bookTitle");
+  let bookRecTitle = response.data.items[randomArray].volumeInfo.title;
+  let bookRecImage =
+    response.data.items[randomArray].volumeInfo.imageLinks.thumbnail;
 
-  // Manipulate DOM
-  bookTitleDiv.textContent = `${bookRec}`;
+  if (!bookRecImage) {
+    delete bookRecImage;
+  }
+
+  let bookTitleDiv = document.querySelector(".bookTitle");
+  let bookCoverDiv = document.getElementById("book-cover");
+
+  // Manipulate DOM element
+  bookTitleDiv.textContent = `${bookRecTitle}`;
+  bookCoverDiv.src = `${bookRecImage}`;
 }
 
 let myMood = document.querySelector(".mood");

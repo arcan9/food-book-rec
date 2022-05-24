@@ -28,11 +28,6 @@ body {
   justify-content: center;
 }
 
-.second-row-mood {
-  display: flex;
-  justify-content: center;
-}
-
 .mood {
   background-color: rgb(254, 247, 235);
   margin: 30px 20px;
@@ -54,6 +49,7 @@ body {
 .volumeContainer {
   display: flex;
   max-width: 400px;
+  flex-direction: column;
   align-items: center;
   text-align: center;
 }
@@ -62,6 +58,11 @@ body {
   display: flex;
   justify-content: center;
   font-size: 2rem;
+}
+
+#book-cover {
+  display: flex;
+  justify-content: center;
 }
 
 #footer {
