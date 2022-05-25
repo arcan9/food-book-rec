@@ -9,23 +9,12 @@
 // recommends it to the user
 // display book cover, title, author, and summary(?) by DOM manipulation
 
-function clickMood() {
-  let apiKey = "AIzaSyAKH5VZTVN3qjnDH0PKgJU6TcPgOX-uNYg"; // hide this key later
-  let apiUrl = `https://www.googleapis.com/books/v1/volumes?q=street+food+"Thailand"+insubject:food&maxResults=40&key=${apiKey}`;
-
-  axios.get(apiUrl).then(recommendTitle);
-}
-
 function recommendTitle(response) {
   // console.log(response);
   let randomArray = Math.floor(Math.random() * response.data.items.length);
   let bookRecTitle = response.data.items[randomArray].volumeInfo.title;
   let bookRecImage =
     response.data.items[randomArray].volumeInfo.imageLinks.thumbnail;
-
-  if (!bookRecImage) {
-    delete bookRecImage;
-  }
 
   let bookTitleDiv = document.querySelector(".bookTitle");
   let bookCoverDiv = document.getElementById("book-cover");
@@ -35,5 +24,12 @@ function recommendTitle(response) {
   bookCoverDiv.src = `${bookRecImage}`;
 }
 
-let myMood = document.querySelector(".mood");
-myMood.addEventListener("click", clickMood);
+function clickButtonOne() {
+  let apiKey = "AIzaSyAKH5VZTVN3qjnDH0PKgJU6TcPgOX-uNYg"; // hide this key later
+  let apiUrl = `https://www.googleapis.com/books/v1/volumes?q=street+food+insubject:food+travel&maxResults=40&key=${apiKey}`;
+
+  axios.get(apiUrl).then(recommendTitle);
+}
+
+let myButtonOne = document.querySelector("#button-one");
+myButtonOne.addEventListener("click", clickButtonOne);

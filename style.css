@@ -23,12 +23,7 @@ body {
   text-align: center;
 }
 
-.first-row-mood {
-  display: flex;
-  justify-content: center;
-}
-
-.mood {
+.buttonz {
   background-color: rgb(254, 247, 235);
   margin: 30px 20px;
   border: 1px black solid;
@@ -37,13 +32,18 @@ body {
   transition: all 200ms ease-in-out;
 }
 
-.mood:hover {
+.buttonz:hover {
   cursor: pointer;
   background-color: #fff;
 }
 
-.mood:active {
+.buttonz:active {
   transform: translate(0, 0.5rem);
+}
+
+.first-row-mood {
+  display: flex;
+  justify-content: center;
 }
 
 .volumeContainer {
