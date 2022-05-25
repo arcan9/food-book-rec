@@ -31,5 +31,35 @@ function clickButtonOne() {
   axios.get(apiUrl).then(recommendTitle);
 }
 
-let myButtonOne = document.querySelector("#button-one");
+function clickButtonTwo() {
+  let apiKey = "AIzaSyAKH5VZTVN3qjnDH0PKgJU6TcPgOX-uNYg"; // hide this key later
+  let apiUrl = `https://www.googleapis.com/books/v1/volumes?q=fast+food+insubject:food&maxResults=40&key=${apiKey}`;
+
+  axios.get(apiUrl).then(recommendTitle);
+}
+
+function clickButtonThree() {
+  let apiKey = "AIzaSyAKH5VZTVN3qjnDH0PKgJU6TcPgOX-uNYg"; // hide this key later
+  let apiUrl = `https://www.googleapis.com/books/v1/volumes?q=holiday+recipe+insubject:food&maxResults=40&key=${apiKey}`;
+
+  axios.get(apiUrl).then(recommendTitle);
+}
+
+function clickButtonFour() {
+  let apiKey = "AIzaSyAKH5VZTVN3qjnDH0PKgJU6TcPgOX-uNYg"; // hide this key later
+  let apiUrl = `https://www.googleapis.com/books/v1/volumes?q=early+history+recipe+insubject:food&maxResults=40&key=${apiKey}`;
+
+  axios.get(apiUrl).then(recommendTitle);
+}
+
+let myButtonOne = document.getElementById("button-one");
 myButtonOne.addEventListener("click", clickButtonOne);
+
+let myButtonTwo = document.getElementById("button-two");
+myButtonTwo.addEventListener("click", clickButtonTwo);
+
+let myButtonThree = document.getElementById("button-three");
+myButtonThree.addEventListener("click", clickButtonThree);
+
+let myButtonFour = document.getElementById("button-four");
+myButtonFour.addEventListener("click", clickButtonFour);
