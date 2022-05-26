@@ -9,6 +9,8 @@
 // recommends it to the user
 // display book cover, title, author, and summary(?) by DOM manipulation
 
+let apiKey = "AIzaSyAKH5VZTVN3qjnDH0PKgJU6TcPgOX-uNYg"; // hide this key later
+
 function recommendTitle(response) {
   // console.log(response);
   let randomArray = Math.floor(Math.random() * response.data.items.length);
@@ -25,28 +27,24 @@ function recommendTitle(response) {
 }
 
 function clickButtonOne() {
-  let apiKey = "AIzaSyAKH5VZTVN3qjnDH0PKgJU6TcPgOX-uNYg"; // hide this key later
   let apiUrl = `https://www.googleapis.com/books/v1/volumes?q=street+food+insubject:food+travel&maxResults=40&key=${apiKey}`;
 
   axios.get(apiUrl).then(recommendTitle);
 }
 
 function clickButtonTwo() {
-  let apiKey = "AIzaSyAKH5VZTVN3qjnDH0PKgJU6TcPgOX-uNYg"; // hide this key later
   let apiUrl = `https://www.googleapis.com/books/v1/volumes?q=fast+food+insubject:food&maxResults=40&key=${apiKey}`;
 
   axios.get(apiUrl).then(recommendTitle);
 }
 
 function clickButtonThree() {
-  let apiKey = "AIzaSyAKH5VZTVN3qjnDH0PKgJU6TcPgOX-uNYg"; // hide this key later
   let apiUrl = `https://www.googleapis.com/books/v1/volumes?q=holiday+recipe+insubject:food&maxResults=40&key=${apiKey}`;
 
   axios.get(apiUrl).then(recommendTitle);
 }
 
 function clickButtonFour() {
-  let apiKey = "AIzaSyAKH5VZTVN3qjnDH0PKgJU6TcPgOX-uNYg"; // hide this key later
   let apiUrl = `https://www.googleapis.com/books/v1/volumes?q=early+history+recipe+insubject:food&maxResults=40&key=${apiKey}`;
 
   axios.get(apiUrl).then(recommendTitle);
