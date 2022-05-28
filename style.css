@@ -41,6 +41,20 @@ body {
   transform: translate(0, 0.5rem);
 }
 
+.icon-food-element {
+  font-size: 50px;
+  background-image: radial-gradient(
+    circle at 12.3% 19.3%,
+    rgb(85, 88, 218) 0%,
+    rgb(95, 209, 249) 100.2%
+  );
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
 .first-row-mood {
   display: flex;
   justify-content: center;
