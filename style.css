@@ -16,6 +16,16 @@ body {
   flex-direction: column;
 }
 
+a {
+  color: #2f3da8;
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgb(217, 236, 253);
+  text-decoration: underline;
+}
+
 .mood-container {
   display: flex;
   max-width: 900px;
