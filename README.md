@@ -1,3 +1,3 @@
 # food-book-rec
 
-A site that recommends you a book depending on how you're feeling today
+A site that recommends you books on food across different topics
